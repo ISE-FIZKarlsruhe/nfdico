@@ -821,8 +821,8 @@ nfdico:Website rdf:type owl:Class ;
 #    Individuals
 #################################################################
 
-###  20http://d-nb.info/gnd/2015828-2
-<20http://d-nb.info/gnd/2015828-2> rdf:type owl:NamedIndividual .
+###  http://d-nb.info/gnd/2015828-2
+<http://d-nb.info/gnd/2015828-2> rdf:type owl:NamedIndividual .
 
 
 ###  http://archaeologie-digital.uni-hd.de
