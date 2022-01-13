@@ -13,3 +13,9 @@ This is the work-in-progress for modelling the NFDI4Culture Ontology. The data c
 [Schematically on Miro board](https://miro.com/app/board/uXjVOe0O_9M=/)
 
 [Spreadsheet used to populate the graph](https://docs.google.com/spreadsheets/d/1KkNxgEqW-Y_Ail-Tbz1T-nI_BaDFhVr9nBuuuzi2xGc/edit#gid=1237549318)
+
+### Notes on the endpoint
+
+This is a preliminary version set up to start exploring the data. It uses [Oxigraph](https://github.com/oxigraph/oxigraph) as the server. The endpoint is not protected in any way at the moment, so it means anyone (also from outside) can also execute UPDATE queries and mess with the data. Right now this is acceptable, but we will of course nail this down soon.
+
+Why Oxigraph? To kick the tyres... ☺️ Blazegraph has to all intents and purposes become "abandonware" as the original authors have moved on to Amazon. The creator of Oxigraph has pitched it as a possible replacement (also for things like Wikidata), so maybe it is interesting fo rus to get a feel for it too already. At least the initial deployment is a no-brainer.
