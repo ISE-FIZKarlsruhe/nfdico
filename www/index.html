@@ -1,16 +1,20 @@
-from flask import Flask, request, make_response
-
-app = Flask(__name__)
-
-
-@app.route("/")
-def alles():
-    return """
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <link href="https://unpkg.com/@triply/yasgui/build/yasgui.min.css" rel="stylesheet" type="text/css" />
   <script src="https://unpkg.com/@triply/yasgui/build/yasgui.min.js"></script>
+  <style>
+  .yasgui .autocompleteWrapper {
+    display: none !important;
+  }
+  </style>
+  <script defer data-domain="nfdi.fiz-karlsruhe.de" src="https://plausible.io/js/plausible.js"></script>
 </head>
 <body>
+  <div>
+    <img src="logos.png" alt="Logos of FIZ and KIT" style="width: 50vw"/>
+    <img src="NFDI4C_Logo.png" style="width: 25vw; position: absolute; right: 0"/>
+  </div>
   <div id="yasgui"></div>
   <script>
     const yasgui = new Yasgui(document.getElementById("yasgui"), {
@@ -19,4 +23,4 @@ def alles():
     });
   </script>
 </body>
-"""
+</html>

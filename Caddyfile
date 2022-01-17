@@ -1,4 +1,5 @@
-nfdi.fiz-karlsruhe.de:80
-
-reverse_proxy /nfdico/* http://fuseki:3030
-reverse_proxy * http://ui:5000
+nfdi.fiz-karlsruhe.de:80 {
+  reverse_proxy /nfdico/* http://fuseki:3030
+  file_server
+  root * /data/
+}

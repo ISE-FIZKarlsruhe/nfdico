@@ -24,11 +24,8 @@ services:
     image: nfdi_fiz_karlsruhe_de
     ports:
       - "42000:80"
-  ui:
-    build:
-      context: .
-      dockerfile: Dockerfile_ui
-    image: nfdi_fiz_karlsruhe_de_ui
+    volumes:
+      - ./www:/data
   fuseki:
     build:
       context: .
