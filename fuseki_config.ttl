@@ -1,0 +1,35 @@
+## Licensed under the terms of http://www.apache.org/licenses/LICENSE-2.0
+
+PREFIX :        <#>
+PREFIX fuseki:  <http://jena.apache.org/fuseki#>
+PREFIX rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX ja:      <http://jena.hpl.hp.com/2005/11/Assembler#>
+
+[] rdf:type fuseki:Server ;
+   fuseki:services (
+     :service
+   ) .
+
+:service rdf:type fuseki:Service ;
+    fuseki:name "nfdico" ;
+    fuseki:endpoint [
+        fuseki:operation fuseki:query ;
+        fuseki:name "sparql" ;
+    ] ;
+    fuseki:dataset :dataset ;
+    .
+
+:dataset rdf:type       ja:RDFDataset ;
+    ja:defaultGraph     :model_inf ;
+     .
+
+:model_inf a ja:InfModel ;
+     ja:baseModel :baseModel ;
+     ja:reasoner [
+         ja:reasonerURL <http://jena.hpl.hp.com/2003/RDFSExptRuleReasoner>
+     ] .
+
+:baseModel a ja:MemoryModel ;
+    ja:content [ja:externalContent <file:databases/cultureGraph.ttl>] ;
+    .

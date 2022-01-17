@@ -34,7 +34,7 @@ services:
       context: .
       dockerfile: Dockerfile_fuseki
     image: fuseki
-    command: --file ./databases/cultureGraph.ttl /nfdico
+    command: --conf ./config.ttl
     volumes:
       - ./logs:/fuseki/logs
       - ./databases:/fuseki/databases

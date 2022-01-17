@@ -113,5 +113,7 @@ USER fuseki
 
 EXPOSE 3030
 
+COPY fuseki_config.ttl config.ttl
+
 ENTRYPOINT ["./entrypoint.sh" ]
 CMD []
