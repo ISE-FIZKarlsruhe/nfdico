@@ -16,12 +16,7 @@ This is the work-in-progress for modelling the NFDI4Culture Ontology. The data c
 
 ### Notes on the endpoint
 
-This is a preliminary version set up to start exploring the data. It uses [Oxigraph](https://github.com/oxigraph/oxigraph) as the server. The endpoint is not protected in any way at the moment, so it means anyone (also from outside) can also execute UPDATE queries and mess with the data. Right now this is acceptable, but we will of course nail this down soon.
+This is a preliminary version set up to start exploring the data.
+We have now switched to using [Apache Jena/Fuseki](https://jena.apache.org/documentation/fuseki2/) as the triplestore and SPARQL query engine.
 
-Why Oxigraph? To kick the tyres... ☺️ Blazegraph has to all intents and purposes become "abandonware" as the original authors have moved on to Amazon. The creator of Oxigraph has pitched it as a possible replacement (also for things like Wikidata), so maybe it is interesting for us to get a feel for it too already. At least the initial deployment is a no-brainer.
-
-Some questions: 
-
-- how does it stand up to larger datasets and high query loads?
-
-- does it have sufficient semantic querying support for knowledge graph research?
+In a previous version we briefly explored using [Oxigraph](https://github.com/oxigraph/oxigraph) but it does not have sufficient inferencing capabilities at this point in time (eg. lacking [RDF Entailment](https://www.w3.org/TR/2013/REC-sparql11-entailment-20130321/)) It is something to keep an eye on for large-scale datasets and simplicity of implmentation.

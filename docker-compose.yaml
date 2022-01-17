@@ -1,0 +1,40 @@
+## Licensed under the terms of http://www.apache.org/licenses/LICENSE-2.0
+# Licensed to the Apache Software Foundation (ASF) under one
+# or more contributor license agreements.  See the NOTICE file
+# distributed with this work for additional information
+# regarding copyright ownership.  The ASF licenses this file
+# to you under the Apache License, Version 2.0 (the
+# "License"); you may not use this file except in compliance
+# with the License.  You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+version: '3.0'
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile_web
+    image: nfdi_fiz_karlsruhe_de
+    ports:
+      - "42000:80"
+  ui:
+    build:
+      context: .
+      dockerfile: Dockerfile_ui
+    image: nfdi_fiz_karlsruhe_de_ui
+  fuseki:
+    build:
+      context: .
+      dockerfile: Dockerfile_fuseki
+    image: fuseki
+    command: --file ./databases/cultureGraph.ttl /nfdico
+    volumes:
+      - ./logs:/fuseki/logs
+      - ./databases:/fuseki/databases
