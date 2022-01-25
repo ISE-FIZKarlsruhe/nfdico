@@ -14,13 +14,13 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     <script type="module">import * as frontend from '/s/shmarql.js';</script>
     <style>
-    .yasgui .autocompleteWrapper { display: none !important; }
     .selektor {margin-right: 0.3ch; cursor: pointer; color: LightCoral}
     </style>
-    <link href="https://unpkg.com/@triply/yasgui/build/yasgui.min.css" rel="stylesheet" type="text/css" />
-    <script src="https://unpkg.com/@triply/yasgui/build/yasgui.min.js"></script>
     <script defer data-domain="nfdi.fiz-karlsruhe.de" src="https://plausible.io/js/plausible.js"></script>
-
+    <script src="codemirror.js"></script>
+    <script src="sparql.js"></script>
+    <script src="matchbrackets.js"></script>
+    <link rel="stylesheet" href="codemirror.css">
   </head>
 
   <body>
@@ -33,12 +33,25 @@
 
     <div class="container-fluid">
         <div class="row p-3">
+            <div class="col">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="triplestores" id="inlineRadio1" value="fuseki">
+                    <label class="form-check-label" for="inlineRadio1">Jena/Fuseki</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="triplestores" id="inlineRadio2" value="blazegraph" checked>
+                    <label class="form-check-label" for="inlineRadio2">Blazegraph</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="row p-3">
         <ul class="nav nav-tabs" id="navtabs">
             <li class="nav-item">
-                <a tabid="shmrql" class="nav-link active" aria-current="page" href="#">Explore</a>
+                <a id="tabshmrql" tabid="shmrql" class="nav-link active" aria-current="page" href="#">Explore</a>
             </li>
             <li class="nav-item">
-                <a tabid="sprql" class="nav-link" href="#">Query</a>
+                <a id="tabsprql" tabid="sprql" class="nav-link" href="#">Query</a>
             </li>
         </ul>
         </div>
@@ -52,23 +65,33 @@
                 <div class="container-fluid" id="results"></div>
             </div>
         </div>
-        <div class="row" id="sprql" style="display: none">
+        <div class="row" id="sprql">
             <div class="col">
-                <div id="yasgui"></div>
+                <form style="border:2px solid #ccc"><textarea id="code" name="code">
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?s ?p ?o
+WHERE {
+  ?s ?p ?o
+}
+</textarea></form>
+                <a href="#" id="execute_sparql" title="Execute this query on the chosen endpoint"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-play-btn" viewBox="0 0 16 16">
+                <path d="M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5z"/>
+                <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm15 0a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z"/>
+                </svg></a>
+
+                <div class="container-fluid" id="query_results"></div>
+
             </div>
         </div>
     </div>
 
-    
-
-  
-  <script>
-    const yasgui = new Yasgui(document.getElementById("yasgui"), {
-                                requestConfig: { endpoint: "/nfdico/sparql" },
-                                copyEndpointOnNewTab: false,
-    });
-  </script>
-
+<script>
+      var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+        mode: "application/sparql-query",
+        matchBrackets: true
+      });
+</script>
 
   </body>  
 </html>

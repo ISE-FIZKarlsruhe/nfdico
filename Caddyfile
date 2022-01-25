@@ -1,5 +1,6 @@
 nfdi.fiz-karlsruhe.de:80 {
-  reverse_proxy /nfdico/* http://fuseki:3030
+  reverse_proxy /fuseki/* http://fuseki:3030
+  reverse_proxy /bigdata/namespace/kb/sparql http://blazegraph:8080 
   file_server
   root * /data/
 }

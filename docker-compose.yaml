@@ -35,3 +35,9 @@ services:
     volumes:
       - ./logs:/fuseki/logs
       - ./databases:/fuseki/databases
+  blazegraph:    
+    image: "lyrasis/blazegraph:2.1.5"
+    volumes:
+      - ./blaze_vm.properties:/RWStore.properties
+    ports:
+      - "50000:8080"    
