@@ -41,3 +41,7 @@ services:
       - ./blaze_vm.properties:/RWStore.properties
     ports:
       - "50000:8080"    
+  virtuoso:
+    image: "openlink/virtuoso-opensource-7"
+    ports:
+      - "50001:8890"
