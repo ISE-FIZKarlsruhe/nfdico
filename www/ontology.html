@@ -1,0 +1,3673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>nfdico - nfdi4culture Ontology</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    
+    <style>
+        #pylode {
+            position: fixed;
+            top: 130px;
+            left: -60px;
+            font-size: small;
+            transform: rotate(-90deg);
+            color: grey;
+        }
+        #pylode a {
+            font-size: 2em;
+            font-weight: bold;
+            text-decoration: none;
+            color: #005A9C;
+        }
+        #pylode a:hover {
+            color: #333;
+        }
+
+        .cardinality {
+            font-style: italic;
+            color: #aa00aa;
+        }
+
+        dt {
+            font-weight: bold;
+            padding: 5px 0 5px 0;
+        }
+
+        ul.hlist {
+            list-style-type: none;
+            border: 1px solid navy;
+            padding:5px;
+            background-color: #F4FFFF;
+        }
+
+        ul.hierarchy {
+            border: 1px solid navy;
+            padding: 5px 25px 5px 25px;
+            background-color: #F4FFFF;
+        }
+
+
+        ul.hlist li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        .entity {
+            border: 1px solid navy;
+            margin:5px 0 5px 0;
+            padding: 5px;
+        }
+
+        .entity th {
+            width: 150px;
+            vertical-align: top;
+        }
+
+        .entity th,
+        .entity td {
+            padding-bottom: 20px;
+        }
+
+        .entity table th {
+            text-align: left;
+        }
+
+        section#overview img {
+            max-width: 1000px;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            text-align: left
+        }
+        h1, h2, h3 {
+            color: #005A9C; background: white
+        }
+        h1 {
+            font: 170% sans-serif;
+            line-height: 110%;
+        }
+        h2 {
+            font: 140% sans-serif;
+            margin-top:40px;
+        }
+        h3 {
+            font: 120% sans-serif;
+            margin-top: 3px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid navy;
+        }
+        h4 { font: bold 100% sans-serif }
+        h5 { font: italic 100% sans-serif }
+        h6 { font: small-caps 100% sans-serif }
+
+
+        body {
+            padding: 2em 70px 2em 70px;
+            margin: 0;
+            font-family: sans-serif;
+            color: black;
+            background: white;
+            background-position: top left;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            text-align: justify;
+        }
+
+        section {
+            max-width: 1500px;
+        }
+
+        .figure {
+            margin-bottom: 20px;
+        }
+
+        :link { color: #00C; background: transparent }
+        :visited { color: #609; background: transparent }
+        a:active { color: #C00; background: transparent }
+
+        .sup-c,
+        .sup-op,
+        .sup-fp,
+        .sup-dp,
+        .sup-ap,
+        .sup-p,
+        .sup-ni,
+        .sup-cp,
+        .sup-cl {
+            cursor:help;
+            margin-left: 3px;
+        }
+
+        .sup-c {
+            color:orange;
+        }
+
+        .sup-op {
+            color:navy;
+        }
+
+        .sup-fp {
+            color:lightskyblue;
+        }
+
+        .sup-dp {
+            color:green;
+        }
+
+        .sup-ap {
+            color:darkred;
+        }
+
+        .sup-p {
+            color:black;
+        }
+
+        .sup-ni {
+            color:brown;
+        }
+
+        .sup-cp {
+            color:orange;
+        }
+
+        .sup-cl {
+            color:darkred;
+        }
+
+        code {
+            font-size: large;
+            color: darkred;
+        }
+
+        /* less prominent links for properties */
+        .proplink {
+            color: #336;
+            text-decoration: none;
+        }
+    </style>
+    
+    <script type="application/ld+json">
+      [
+  {
+    "@id": "https://www.nfdi4culture.de/ontology/",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/name": [
+      {
+        "@value": "nfdico - nfdi4culture Ontology"
+      }
+    ]
+  }
+]
+    </script>
+</head>
+<body>
+  <div id="pylode">made by <a href="http://github.com/rdflib/pyLODE">
+    <span style="color:#329545;">p</span><span style="color:#f9cb33;">y</span>LODE</a>
+    <span style="font-size:smaller;">2.8.3</span>
+  </div>
+  <h1>nfdico - nfdi4culture Ontology</h1>
+<section id="metadata">
+    <h2 style="display:none;">Metadata</h2>
+    <dl>
+        <dt>URI</dt>
+        <dd><code>https://www.nfdi4culture.de/ontology/</code></dd>
+        <dt><a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/creator">Creator</a>(s)</dt>
+        <dd>
+            Tabea Tietz <br/>
+            Oleksandra Bruns<br/>
+            Etienne Posthumus<br/>
+            Harald Sack <br/>
+
+
+        </dd>
+
+        <dt>Version URI</dt>
+        <dd><a href="https://www.nfdi4culture.de/ontology/">hhttps://www.nfdi4culture.de/ontology/</a></dd>
+        <dt>Ontology RDF</dt>
+        <dd><a href="hhttps://github.com/ISE-FIZKarlsruhe/nfdico/blob/main/databases/nfdico.ttl">RDF (turtle)</a></dd>
+    </dl>
+</section>
+<section id="toc">
+    <h2>Table of Contents</h2>
+    <ol>
+        <li><a href="#classes">Classes</a></li>
+        <li><a href="#objectproperties">Object Properties</a></li>
+        <li><a href="#datatypeproperties">Datatype Properties</a></li>
+        <li><a href="#annotationproperties">Annotation Properties</a></li>
+        <li><a href="#namespaces">Namespaces</a></li>
+        <li><a href="#legend">Legend</a></li>
+    </ol>
+</section>
+<section id="overview">
+    <h2>About nfdico</h2>
+ 
+</section>
+  <section id="classes">
+    <h2>Classes <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <ul class="hlist">
+        <li><a href="#AcademicSubject">AcademicSubject</a></li>
+        <li><a href="#AcademicSubject1">AcademicSubject</a></li>
+        <li><a href="#AuthorityFile">AuthorityFile</a></li>
+        <li><a href="#BibliographicRessource">BibliographicRessource</a></li>
+        <li><a href="#Collection">Collection</a></li>
+        <li><a href="#ComputerLanguage">ComputerLanguage</a></li>
+        <li><a href="#DataService">DataService</a></li>
+        <li><a href="#Dataset">Dataset</a></li>
+        <li><a href="#Dataset1">Dataset</a></li>
+        <li><a href="#Document">Document</a></li>
+        <li><a href="#ERO_0000005">ERO_0000005</a></li>
+        <li><a href="#ERO_0001554">ERO_0001554</a></li>
+        <li><a href="#FundingAgency">FundingAgency</a></li>
+        <li><a href="#GAZ_00000448">GAZ_00000448</a></li>
+        <li><a href="#IAO_0000025">IAO_0000025</a></li>
+        <li><a href="#Individual">Individual</a></li>
+        <li><a href="#Licence">Licence</a></li>
+        <li><a href="#LicenseDocument">LicenseDocument</a></li>
+        <li><a href="#LicenseModel">LicenseModel</a></li>
+        <li><a href="#Location">Location</a></li>
+        <li><a href="#Location1">Location</a></li>
+        <li><a href="#Location1">Location</a></li>
+        <li><a href="#MediaType">MediaType</a></li>
+        <li><a href="#OBI_0000245">OBI_0000245</a></li>
+        <li><a href="#Ontology">Ontology</a></li>
+        <li><a href="#Ontology1">Ontology</a></li>
+        <li><a href="#OntologyType">OntologyType</a></li>
+        <li><a href="#Organisation">Organisation</a></li>
+        <li><a href="#Organisation1">Organisation</a></li>
+        <li><a href="#Organisation1">Organisation</a></li>
+        <li><a href="#Organisation1">Organisation</a></li>
+        <li><a href="#Organisation1">Organisation</a></li>
+        <li><a href="#Person">Person</a></li>
+        <li><a href="#Person1">Person</a></li>
+        <li><a href="#ProgrammingLanguage">ProgrammingLanguage</a></li>
+        <li><a href="#Project">Project</a></li>
+        <li><a href="#Project1">Project</a></li>
+        <li><a href="#Project1">Project</a></li>
+        <li><a href="#SWO_0000001">SWO_0000001</a></li>
+        <li><a href="#SWO_0000002">SWO_0000002</a></li>
+        <li><a href="#ScholarlyWork">ScholarlyWork</a></li>
+        <li><a href="#Science">Science</a></li>
+        <li><a href="#Service">Service</a></li>
+        <li><a href="#Service1">Service</a></li>
+        <li><a href="#Software">Software</a></li>
+        <li><a href="#Standard">Standard</a></li>
+        <li><a href="#Website">Website</a></li>
+        <li><a href="#academicdiscipline">academic discipline</a></li>
+        <li><a href="#authority">authority</a></li>
+        <li><a href="#AuthorityType">authority type</a></li>
+        <li><a href="#BestPractice">best practice</a></li>
+        <li><a href="#city">city</a></li>
+        <li><a href="#collectionordataset">collection or dataset</a></li>
+        <li><a href="#contribution">contribution</a></li>
+        <li><a href="#Contributor">contributor</a></li>
+        <li><a href="#Country">country</a></li>
+        <li><a href="#dataportal">data portal</a></li>
+        <li><a href="#developmentwork">development work</a></li>
+        <li><a href="#FederalState">federal state</a></li>
+        <li><a href="#FundingOrganisation">funding organisation</a></li>
+        <li><a href="#instanceofresearchdatamanagementtool">instance of research data management tool</a></li>
+        <li><a href="#License">license</a></li>
+        <li><a href="#Mapping">mapping</a></li>
+        <li><a href="#MediaType1">media type</a></li>
+        <li><a href="#Norm">norm</a></li>
+        <li><a href="#ObjectType">object type</a></li>
+        <li><a href="#ontology">ontology</a></li>
+        <li><a href="#OntologyType1">ontology type</a></li>
+        <li><a href="#organisation">organisation</a></li>
+        <li><a href="#person">person</a></li>
+        <li><a href="#place">place</a></li>
+        <li><a href="#ProgrammingLanguage1">programming language</a></li>
+        <li><a href="#project">project</a></li>
+        <li><a href="#publication">publication</a></li>
+        <li><a href="#researchdatamanagementinfrastructure">research data management infrastructure</a></li>
+        <li><a href="#researchdatamanagementservice">research data management service</a></li>
+        <li><a href="#researchdatamanagementtool">research data management tool</a></li>
+        <li><a href="#service">service</a></li>
+        <li><a href="#ServiceType">service type</a></li>
+        <li><a href="#Software1">software</a></li>
+        <li><a href="#SparqlEndpoint">sparql endpoint</a></li>
+        <li><a href="#Technology">technology</a></li>
+        <li><a href="#website">website</a></li>
+    </ul>
+    <div class="entity class" id="LicenseModel">
+        <h3>LicenseModel<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://omv.ontoware.org/2005/05/ontology#LicenseModel</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Ontology">
+        <h3>Ontology<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://omv.ontoware.org/2005/05/ontology#Ontology</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="OntologyType">
+        <h3>OntologyType<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://omv.ontoware.org/2005/05/ontology#OntologyType</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Organisation">
+        <h3>Organisation<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://omv.ontoware.org/2005/05/ontology#Organisation</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="ERO_0000005">
+        <h3>ERO_0000005<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://purl.obolibrary.org/obo/ERO_0000005</code></td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/Service">nfdico:Service</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="ERO_0001554">
+        <h3>ERO_0001554<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://purl.obolibrary.org/obo/ERO_0001554</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="GAZ_00000448">
+        <h3>GAZ_00000448<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://purl.obolibrary.org/obo/GAZ_00000448</code></td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/Place">nfdico:Place</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="IAO_0000025">
+        <h3>IAO_0000025<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://purl.obolibrary.org/obo/IAO_0000025</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="OBI_0000245">
+        <h3>OBI_0000245<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://purl.obolibrary.org/obo/OBI_0000245</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="FundingAgency">
+        <h3>FundingAgency<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://purl.org/cerif/frapo/FundingAgency</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Service">
+        <h3>Service<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://purl.org/cerif/frapo/Service</code></td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/Service">nfdico:Service</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Collection">
+        <h3>Collection<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://purl.org/dc/dcmitype/Collection</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Service1">
+        <h3>Service<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://purl.org/dc/dcmitype/Service</code></td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/Service">nfdico:Service</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="BibliographicRessource">
+        <h3>BibliographicRessource<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://purl.org/dc/terms/BibliographicRessource</code></td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/Publication">nfdico:Publication</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="LicenseDocument">
+        <h3>LicenseDocument<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://purl.org/dc/terms/LicenseDocument</code></td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/License">nfdico:License</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Location">
+        <h3>Location<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://purl.org/dc/terms/Location</code></td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/Place">nfdico:Place</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="MediaType">
+        <h3>MediaType<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://purl.org/dc/terms/MediaType</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Standard">
+        <h3>Standard<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://purl.org/dc/terms/Standard</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Website">
+        <h3>Website<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://purl.org/ontology/bibo/Website</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="AcademicSubject">
+        <h3>AcademicSubject<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://purl.org/spar/fabio/AcademicSubject</code></td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/AcademicDiscipline">nfdico:AcademicDiscipline</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="AuthorityFile">
+        <h3>AuthorityFile<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://purl.org/spar/fabio/AuthorityFile</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Ontology1">
+        <h3>Ontology<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://purl.org/spar/fabio/Ontology</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="ScholarlyWork">
+        <h3>ScholarlyWork<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://purl.org/spar/fabio/ScholarlyWork</code></td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/Publication">nfdico:Publication</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="ComputerLanguage">
+        <h3>ComputerLanguage<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://schema.org/ComputerLanguage</code></td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/ProgrammingLanguage">nfdico:ProgrammingLanguage</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Organisation1">
+        <h3>Organisation<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://schema.org/Organisation</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Project">
+        <h3>Project<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://schema.org/Project</code></td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/Project">nfdico:Project</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Project1">
+        <h3>Project<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://usefulinc.com/ns/doap#Project</code></td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/Project">nfdico:Project</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Dataset">
+        <h3>Dataset<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://vivoweb.org/ontology/core#Dataset</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Licence">
+        <h3>Licence<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://vivoweb.org/ontology/core#Licence</code></td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/License">nfdico:License</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Location1">
+        <h3>Location<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://vivoweb.org/ontology/core#Location</code></td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/Place">nfdico:Place</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="SWO_0000001">
+        <h3>SWO_0000001<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.ebi.ac.uk/swo/SWO_0000001</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="SWO_0000002">
+        <h3>SWO_0000002<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.ebi.ac.uk/swo/SWO_0000002</code></td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/License">nfdico:License</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Individual">
+        <h3>Individual<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.w3.org/2006/vcard/ns#Individual</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Location1">
+        <h3>Location<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.w3.org/2006/vcard/ns#Location</code></td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/Place">nfdico:Place</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Organisation1">
+        <h3>Organisation<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.w3.org/2006/vcard/ns#Organisation</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="DataService">
+        <h3>DataService<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.w3.org/ns/dcat#DataService</code></td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/RDMInfrastructure">nfdico:RDMInfrastructure</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Dataset1">
+        <h3>Dataset<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.w3.org/ns/dcat#Dataset</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Organisation1">
+        <h3>Organisation<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.w3.org/ns/org#Organisation</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Software">
+        <h3>Software<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.w3.org/ns/sparql-service-description#Software</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Document">
+        <h3>Document<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://xmlns.com/foaf/0.1/Document</code></td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/Website">nfdico:Website</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Organisation1">
+        <h3>Organisation<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://xmlns.com/foaf/0.1/Organisation</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Person">
+        <h3>Person<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://xmlns.com/foaf/0.1/Person</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Project1">
+        <h3>Project<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://xmlns.com/foaf/0.1/Project</code></td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/Project">nfdico:Project</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="AcademicSubject1">
+        <h3>AcademicSubject<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://dbpedia.org/ontology/AcademicSubject</code></td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/AcademicDiscipline">nfdico:AcademicDiscipline</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Person1">
+        <h3>Person<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://dbpedia.org/ontology/Person</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="ProgrammingLanguage">
+        <h3>ProgrammingLanguage<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/skgo/modsci#ProgrammingLanguage</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Science">
+        <h3>Science<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/skgo/modsci#Science</code></td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/AcademicDiscipline">nfdico:AcademicDiscipline</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="academicdiscipline">
+        <h3>academic discipline<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/AcademicDiscipline</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>An academic discipline, a research field or domain of a ressource, e.g. a data portal.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="https://w3id.org/skgo/modsci#Science">modsci:Science</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://purl.org/spar/fabio/AcademicSubject">fabio:AcademicSubject</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://dbpedia.org/ontology/AcademicSubject">dbo:AcademicSubject</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/subjectArea">nfdico:subjectArea</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="authority">
+        <h3>authority<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/Authority</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>A collection of selected decisions or rules for a form of entry that result in the consistency of entries to improve interoperability and retrieval of data.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/authorityType">nfdico:authorityType</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/authorityControl">nfdico:authorityControl</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="AuthorityType">
+        <h3>authority type<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/AuthorityType</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>The type of an authority used for the establishment and maintainance of consistent forms of terms.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/authorityType">nfdico:authorityType</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="BestPractice">
+        <h3>best practice<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/BestPractice</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>A ressource that identifies a standard or preferred procedure within specific domain.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/bestPractice">nfdico:bestPractice</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="city">
+        <h3>city<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/City</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>A city or a town where the thing is located.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/Place">nfdico:Place</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/federalState">nfdico:federalState</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="collectionordataset">
+        <h3>collection or dataset<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/CollectionOrDataset</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>A collection of data published or curated by a single organisation.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/Contribution">nfdico:Contribution</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/objectType">nfdico:objectType</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="contribution">
+        <h3>contribution<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/Contribution</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>A contribution to a project made by a contributor. Subclasses are used to specify particular contributions, e.g. DataPortal or Software.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/Software">nfdico:Software</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://www.nfdi4culture.de/ontology/RDMInfrastructure">nfdico:RDMInfrastructure</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://www.nfdi4culture.de/ontology/DevelopmentWork">nfdico:DevelopmentWork</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://www.nfdi4culture.de/ontology/CollectionOrDataset">nfdico:CollectionOrDataset</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://www.nfdi4culture.de/ontology/Service">nfdico:Service</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://www.nfdi4culture.de/ontology/DataPortal">nfdico:DataPortal</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/exportFormat">nfdico:exportFormat</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="https://www.nfdi4culture.de/ontology/fundingProject">nfdico:fundingProject</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="https://www.nfdi4culture.de/ontology/contactPoint">nfdico:contactPoint</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="https://www.nfdi4culture.de/ontology/authorityControl">nfdico:authorityControl</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="https://www.nfdi4culture.de/ontology/provider">nfdico:provider</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="https://www.nfdi4culture.de/ontology/contributor">nfdico:contributor</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Contributor">
+        <h3>contributor<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/Contributor</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>An organisation that contributes to the creation of data.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/Organisation">nfdico:Organisation</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/contributor">nfdico:contributor</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Country">
+        <h3>country<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/Country</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>A country where the thing is located.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/Place">nfdico:Place</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/country">nfdico:country</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="dataportal">
+        <h3>data portal<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/DataPortal</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>An online platform that provides access to data collections and datasets.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/Contribution">nfdico:Contribution</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/bestPractice">nfdico:bestPractice</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="developmentwork">
+        <h3>development work<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/DevelopmentWork</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>A ressource that identifies an ongoing development of standards, services, data models, vocabularies, ontologies, etc.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/Contribution">nfdico:Contribution</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="FederalState">
+        <h3>federal state<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/FederalState</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>A federal state where the thing is located.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/Place">nfdico:Place</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/federalState">nfdico:federalState</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="FundingOrganisation">
+        <h3>funding organisation<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/FundingOrganisation</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>An organisation that provides funding for projects or ressources.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/Organisation">nfdico:Organisation</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/fundingOrganisation">nfdico:fundingOrganisation</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="instanceofresearchdatamanagementtool">
+        <h3>instance of research data management tool<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/InstanceOfRDMTool</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>A ressource that identifies a single copy of an RDM Tool running on a single physical or virtual server.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/instance">nfdico:instance</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="License">
+        <h3>license<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/License</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>A document that provides legal guidelines for the use of a ressource, e.g. a software.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://vivoweb.org/ontology/core#Licence">vivo:Licence</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://purl.org/dc/terms/LicenseDocument">dcterms:LicenseDocument</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.ebi.ac.uk/swo/SWO_0000002">swo:SWO_0000002</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/license">nfdico:license</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Mapping">
+        <h3>mapping<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/Mapping</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>A ressource that documents a mapping from a format/vocabulary to other format/vocabulary.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/mapping">nfdico:mapping</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="MediaType1">
+        <h3>media type<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/MediaType</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>A format or a physical medium of digital data.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/exportFormat">nfdico:exportFormat</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="https://www.nfdi4culture.de/ontology/mediaType">nfdico:mediaType</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Norm">
+        <h3>norm<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/Norm</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>An international standard and norm that can be used to evaluate or create services.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/norm">nfdico:norm</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="ObjectType">
+        <h3>object type<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/ObjectType</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>A ressource identifies the type of object in a data collection.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/objectType">nfdico:objectType</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="ontology">
+        <h3>ontology<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/Ontology</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>An ontology used for formal representations of concepts in a ressource, e.g. in data collection.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/ontologyType">nfdico:ontologyType</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/vocabulary">nfdico:vocabulary</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="OntologyType1">
+        <h3>ontology type<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/OntologyType</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>A ressource identifies the type of an ontology.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/ontologyType">nfdico:ontologyType</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="organisation">
+        <h3>organisation<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/Organisation</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>An organisation of some kind, e.g. research organisation or business organisation.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/Contributor">nfdico:Contributor</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://www.nfdi4culture.de/ontology/FundingOrganisation">nfdico:FundingOrganisation</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/parentOrganisation">nfdico:parentOrganisation</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="https://www.nfdi4culture.de/ontology/areaCode">nfdico:areaCode</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="https://www.nfdi4culture.de/ontology/emailAddress">nfdico:emailAddress</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="https://www.nfdi4culture.de/ontology/partnerOrganisation">nfdico:partnerOrganisation</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/publisher">nfdico:publisher</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="https://www.nfdi4culture.de/ontology/parentOrganisation">nfdico:parentOrganisation</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="https://www.nfdi4culture.de/ontology/provider">nfdico:provider</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="https://www.nfdi4culture.de/ontology/partnerOrganisation">nfdico:partnerOrganisation</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="person">
+        <h3>person<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/Person</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>A ressource that represents a single person.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/contactPoint">nfdico:contactPoint</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="place">
+        <h3>place<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/Place</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>A spatial region, e.g. country, city or district.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://purl.org/dc/terms/Location">dcterms:Location</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://vivoweb.org/ontology/core#Location">vivo:Location</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://purl.obolibrary.org/obo/GAZ_00000448">obo:GAZ_00000448</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.w3.org/2006/vcard/ns#Location">vcard:Location</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/Country">nfdico:Country</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://www.nfdi4culture.de/ontology/FederalState">nfdico:FederalState</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://www.nfdi4culture.de/ontology/City">nfdico:City</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/location">nfdico:location</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="ProgrammingLanguage1">
+        <h3>programming language<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/ProgrammingLanguage</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>A formal language used for implementing a software.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://schema.org/ComputerLanguage">http://schema.org/ComputerLanguage</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/programmingLanguage">nfdico:programmingLanguage</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="project">
+        <h3>project<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/Project</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>A scientific or business endeavor that aims to conclude an investigation or to answer a research question.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://xmlns.com/foaf/0.1/Project">http://xmlns.com/foaf/0.1/Project</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://schema.org/Project">http://schema.org/Project</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://usefulinc.com/ns/doap#Project">doap:Project</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/relatedProject">nfdico:relatedProject</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/relatedProject">nfdico:relatedProject</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="https://www.nfdi4culture.de/ontology/fundingProject">nfdico:fundingProject</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="publication">
+        <h3>publication<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/Publication</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>A published scholarly work that reports on ongoing activity about or within a ressource, e.g. a dataset.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://purl.org/spar/fabio/ScholarlyWork">fabio:ScholarlyWork</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://purl.org/dc/terms/BibliographicRessource">dcterms:BibliographicRessource</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="researchdatamanagementinfrastructure">
+        <h3>research data management infrastructure<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/RDMInfrastructure</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>A infrastructure used to provide research data management and enforce research data management policies.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/Contribution">nfdico:Contribution</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.w3.org/ns/dcat#DataService">dcat:DataService</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/RDMService">nfdico:RDMService</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://www.nfdi4culture.de/ontology/RDMTool">nfdico:RDMTool</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="researchdatamanagementservice">
+        <h3>research data management service<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/RDMService</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>A service that aims at providing support at every step of research data management, e.g. investigation, development, sustainbility of research data.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/RDMInfrastructure">nfdico:RDMInfrastructure</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="researchdatamanagementtool">
+        <h3>research data management tool<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/RDMTool</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>A software tool used for tackling a specific research data management problem.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/RDMInfrastructure">nfdico:RDMInfrastructure</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/instance">nfdico:instance</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="service">
+        <h3>service<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/Service</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>A service, expertise or skill provided by an organisation.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://purl.org/cerif/frapo/Service">frapo:Service</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://www.nfdi4culture.de/ontology/Contribution">nfdico:Contribution</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://purl.obolibrary.org/obo/ERO_0000005">obo:ERO_0000005</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://purl.org/dc/dcmitype/Service">dcmitype:Service</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/serviceType">nfdico:serviceType</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="https://www.nfdi4culture.de/ontology/software">nfdico:software</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="ServiceType">
+        <h3>service type<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/ServiceType</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>A ressource identifies the tape of a service.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/serviceType">nfdico:serviceType</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Software1">
+        <h3>software<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/Software</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>A computer software provided by an organisation.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/Contribution">nfdico:Contribution</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/programmingLanguage">nfdico:programmingLanguage</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/software">nfdico:software</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="SparqlEndpoint">
+        <h3>sparql endpoint<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/SparqlEndpoint</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>An endpoint URL.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/sparqlEndpoint">nfdico:sparqlEndpoint</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Technology">
+        <h3>technology<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/Technology</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>A technology, e.g. a web application or a programming framework used in a ressource.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/technology">nfdico:technology</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="website">
+        <h3>website<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/Website</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>A homepage or a website of a ressource.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://xmlns.com/foaf/0.1/Document">http://xmlns.com/foaf/0.1/Document</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/homepage">nfdico:homepage</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+</section>
+<section id="objectproperties">
+    <h2>Object Properties <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <ul class="hlist">
+        <li><a href="#hasFundingAgency">hasFundingAgency</a></li>
+        <li><a href="#conformsTo">conformsTo</a></li>
+        <li><a href="#contributor">contributor</a></li>
+        <li><a href="#format">format</a></li>
+        <li><a href="#license">license</a></li>
+        <li><a href="#publisher">publisher</a></li>
+        <li><a href="#sparqlEndpoint">sparqlEndpoint</a></li>
+        <li><a href="#vocabulary">vocabulary</a></li>
+        <li><a href="#funder">funder</a></li>
+        <li><a href="#mapsTo">mapsTo</a></li>
+        <li><a href="#contactPoint">contactPoint</a></li>
+        <li><a href="#landingPage">landingPage</a></li>
+        <li><a href="#theme">theme</a></li>
+        <li><a href="#hasSubOrganisation">hasSubOrganisation</a></li>
+        <li><a href="#subOrganisationOf">subOrganisationOf</a></li>
+        <li><a href="#fundedBy">fundedBy</a></li>
+        <li><a href="#homepage">homepage</a></li>
+        <li><a href="#country">country</a></li>
+        <li><a href="#authoritycontrol">authority control</a></li>
+        <li><a href="#authorityof">authority of</a></li>
+        <li><a href="#authoritytype">authority type</a></li>
+        <li><a href="#authoritytypeof">authority type of</a></li>
+        <li><a href="#bestpractice">best practice</a></li>
+        <li><a href="#bestpracticeof">best practice of</a></li>
+        <li><a href="#contactpoint">contact point</a></li>
+        <li><a href="#contactpointof">contact point of</a></li>
+        <li><a href="#contributor1">contributor</a></li>
+        <li><a href="#contributorof">contributor of</a></li>
+        <li><a href="#country1">country</a></li>
+        <li><a href="#countryof">country of</a></li>
+        <li><a href="#exportformat">export format</a></li>
+        <li><a href="#exportformatof">export format of</a></li>
+        <li><a href="#federalstate">federal state</a></li>
+        <li><a href="#federalstateof">federal state of</a></li>
+        <li><a href="#funder1">funder</a></li>
+        <li><a href="#funderof">funder of</a></li>
+        <li><a href="#fundingorganisation">funding organisation</a></li>
+        <li><a href="#fundingorganisationof">funding organisation of</a></li>
+        <li><a href="#fundingproject">funding project</a></li>
+        <li><a href="#fundingprojectof">funding project of</a></li>
+        <li><a href="#homepage1">homepage</a></li>
+        <li><a href="#homepageof">homepage of</a></li>
+        <li><a href="#instance">instance</a></li>
+        <li><a href="#instanceof">instance of</a></li>
+        <li><a href="#license1">license</a></li>
+        <li><a href="#licenseof">license of</a></li>
+        <li><a href="#location">location</a></li>
+        <li><a href="#locationof">location of</a></li>
+        <li><a href="#mapping">mapping</a></li>
+        <li><a href="#mappingof">mapping of</a></li>
+        <li><a href="#mediatype">media type</a></li>
+        <li><a href="#mediatypeof">media type of</a></li>
+        <li><a href="#norm">norm</a></li>
+        <li><a href="#normof">norm of</a></li>
+        <li><a href="#objecttype">object type</a></li>
+        <li><a href="#objecttypeof">object type of</a></li>
+        <li><a href="#ontologytype">ontology type</a></li>
+        <li><a href="#ontologytypeof">ontology type of</a></li>
+        <li><a href="#parentorganisation">parent organisation</a></li>
+        <li><a href="#partnerorganisation">partner organisation</a></li>
+        <li><a href="#programminglanguage">programming language</a></li>
+        <li><a href="#programminglanguageof">programming language of</a></li>
+        <li><a href="#provider">provider</a></li>
+        <li><a href="#providerof">provider of</a></li>
+        <li><a href="#publisher1">publisher</a></li>
+        <li><a href="#publisherof">publisher of</a></li>
+        <li><a href="#relatedproject">related project</a></li>
+        <li><a href="#servicetype">service type</a></li>
+        <li><a href="#servicetypeof">service type of</a></li>
+        <li><a href="#software">software</a></li>
+        <li><a href="#softwareof">software of</a></li>
+        <li><a href="#sparqlendpoint">sparql endpoint</a></li>
+        <li><a href="#sparqlendpointof">sparql endpoint of</a></li>
+        <li><a href="#subjectarea">subject area</a></li>
+        <li><a href="#subjectareaof">subject area of</a></li>
+        <li><a href="#subsidiaryorganisation">subsidiary organisation</a></li>
+        <li><a href="#technology">technology</a></li>
+        <li><a href="#technologyof">technology of</a></li>
+        <li><a href="#vocabulary1">vocabulary</a></li>
+        <li><a href="#vocabularyof">vocabulary of</a></li>
+    </ul>
+    <div class="entity property" id="hasFundingAgency">
+        <h3>hasFundingAgency<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://purl.org/cerif/frapo/hasFundingAgency</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="conformsTo">
+        <h3>conformsTo<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://purl.org/dc/terms/conformsTo</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="contributor">
+        <h3>contributor<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://purl.org/dc/terms/contributor</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="format">
+        <h3>format<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://purl.org/dc/terms/format</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="license">
+        <h3>license<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://purl.org/dc/terms/license</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="publisher">
+        <h3>publisher<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://purl.org/dc/terms/publisher</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="sparqlEndpoint">
+        <h3>sparqlEndpoint<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://rdfs.org/ns/void#sparqlEndpoint</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="vocabulary">
+        <h3>vocabulary<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://rdfs.org/ns/void#vocabulary</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="funder">
+        <h3>funder<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://schema.org/funder</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="mapsTo">
+        <h3>mapsTo<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.data-knowledge.org/dk/mapsTo</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="contactPoint">
+        <h3>contactPoint<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.w3.org/ns/dcat#contactPoint</code></td>
+            </tr>
+            <tr>
+                <th>Equivalent properties</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/contactPoint">nfdico:contactPoint</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="landingPage">
+        <h3>landingPage<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.w3.org/ns/dcat#landingPage</code></td>
+            </tr>
+            <tr>
+                <th>Equivalent properties</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/homepage">nfdico:homepage</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="theme">
+        <h3>theme<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.w3.org/ns/dcat#theme</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasSubOrganisation">
+        <h3>hasSubOrganisation<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.w3.org/ns/org#hasSubOrganisation</code></td>
+            </tr>
+            <tr>
+                <th>Equivalent properties</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/parentOrganisation">nfdico:parentOrganisation</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="subOrganisationOf">
+        <h3>subOrganisationOf<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.w3.org/ns/org#subOrganisationOf</code></td>
+            </tr>
+            <tr>
+                <th>Equivalent properties</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/subsidiaryOrganization">nfdico:subsidiaryOrganization</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="fundedBy">
+        <h3>fundedBy<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://xmlns.com/foaf/0.1/fundedBy</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="homepage">
+        <h3>homepage<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://xmlns.com/foaf/0.1/homepage</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="country">
+        <h3>country<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://dbpedia.org/ontology/country</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="authoritycontrol">
+        <h3>authority control<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/authorityControl</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The property is a relationship between data and an authority the data is based on.
+                </td>
+            </tr>
+            <tr>
+                <th>Inverse properties</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/authorityOf">nfdico:authorityOf</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/Contribution">nfdico:Contribution</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/Authority">nfdico:Authority</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="authorityof">
+        <h3>authority of<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/authorityOf</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="authoritytype">
+        <h3>authority type<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/authorityType</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The property is a relationship between an authorty ressource and its type.
+                </td>
+            </tr>
+            <tr>
+                <th>Inverse properties</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/authorityTypeOf">nfdico:authorityTypeOf</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/Authority">nfdico:Authority</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/AuthorityType">nfdico:AuthorityType</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="authoritytypeof">
+        <h3>authority type of<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/authorityTypeOf</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="bestpractice">
+        <h3>best practice<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/bestPractice</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The property is a relationship between a data portal and the best practice.
+                </td>
+            </tr>
+            <tr>
+                <th>Inverse properties</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/bestPracticeOf">nfdico:bestPracticeOf</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/DataPortal">nfdico:DataPortal</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/BestPractice">nfdico:BestPractice</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="bestpracticeof">
+        <h3>best practice of<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/bestPracticeOf</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="contactpoint">
+        <h3>contact point<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/contactPoint</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The property is a relationship between a contribution and a contact point.
+                </td>
+            </tr>
+            <tr>
+                <th>Inverse properties</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/contactPointOf">nfdico:contactPointOf</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/Contribution">nfdico:Contribution</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/Person">nfdico:Person</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="contactpointof">
+        <h3>contact point of<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/contactPointOf</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="contributor1">
+        <h3>contributor<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/contributor</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The property is a relationship between a contribution and the organisation that has contributed it.
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://purl.org/dc/terms/contributor">dcterms:contributor</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Inverse properties</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/contributorOf">nfdico:contributorOf</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/Contribution">nfdico:Contribution</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/Contributor">nfdico:Contributor</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="contributorof">
+        <h3>contributor of<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/contributorOf</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="country1">
+        <h3>country<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/country</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The property relates a city or a state to a country where it is located.
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="https://dbpedia.org/ontology/country">dbo:country</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Inverse properties</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/countryOf">nfdico:countryOf</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    (<a href="https://www.nfdi4culture.de/ontology/City">nfdico:City</a><sup class="sup-c" title="class">c</sup> or <a href="https://www.nfdi4culture.de/ontology/FederalState">nfdico:FederalState</a><sup class="sup-c" title="class">c</sup>)
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/Country">nfdico:Country</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="countryof">
+        <h3>country of<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/countryOf</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="exportformat">
+        <h3>export format<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/exportFormat</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The property relates a contrbution to the format available for the export of a contribution.
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://purl.org/dc/terms/format">dcterms:format</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Inverse properties</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/exportFormatOf">nfdico:exportFormatOf</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/Contribution">nfdico:Contribution</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/MediaType">nfdico:MediaType</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="exportformatof">
+        <h3>export format of<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/exportFormatOf</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="federalstate">
+        <h3>federal state<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/federalState</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The property relates a city to a federal state where it is located.
+                </td>
+            </tr>
+            <tr>
+                <th>Inverse properties</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/federalStateOf">nfdico:federalStateOf</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/City">nfdico:City</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/FederalState">nfdico:FederalState</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="federalstateof">
+        <h3>federal state of<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/federalStateOf</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="funder1">
+        <h3>funder<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/funder</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The property relates thing to an organisation or a project that provided funding for it. The subproperties are used to specify more specific funding relationships.
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://schema.org/funder">http://schema.org/funder</a><sup class="sup-op" title="object property">op</sup>
+                    <a href="http://xmlns.com/foaf/0.1/fundedBy">http://xmlns.com/foaf/0.1/fundedBy</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Inverse properties</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/funderOf">nfdico:funderOf</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#Thing">owl:Thing</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/Organisation">nfdico:Organisation</a><sup class="sup-c" title="class">c</sup>
+                    <a href="https://www.nfdi4culture.de/ontology/Project">nfdico:Project</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="funderof">
+        <h3>funder of<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/funderOf</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="fundingorganisation">
+        <h3>funding organisation<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/fundingOrganisation</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The property relates a contribution or a project to the organisation that provided funding for it.
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://purl.org/cerif/frapo/hasFundingAgency">frapo:hasFundingAgency</a><sup class="sup-op" title="object property">op</sup>
+                    <a href="https://www.nfdi4culture.de/ontology/funder">nfdico:funder</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Inverse properties</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/fundingOrganisationOf">nfdico:fundingOrganisationOf</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    (<a href="https://www.nfdi4culture.de/ontology/Contribution">nfdico:Contribution</a><sup class="sup-c" title="class">c</sup> or <a href="https://www.nfdi4culture.de/ontology/Project">nfdico:Project</a><sup class="sup-c" title="class">c</sup>)
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/FundingOrganisation">nfdico:FundingOrganisation</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="fundingorganisationof">
+        <h3>funding organisation of<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/fundingOrganisationOf</code></td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/funderOf">nfdico:funderOf</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="fundingproject">
+        <h3>funding project<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/fundingProject</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The property relateds a contribution to the project that provided funding for it.
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/funder">nfdico:funder</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Inverse properties</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/fundingProjectOf">nfdico:fundingProjectOf</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/Contribution">nfdico:Contribution</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/Project">nfdico:Project</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="fundingprojectof">
+        <h3>funding project of<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/fundingProjectOf</code></td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/funderOf">nfdico:funderOf</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="homepage1">
+        <h3>homepage<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/homepage</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The property is a relationship between a data ressource and its homepage.
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://xmlns.com/foaf/0.1/homepage">http://xmlns.com/foaf/0.1/homepage</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Inverse properties</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/homepageOf">nfdico:homepageOf</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    (<a href="https://www.nfdi4culture.de/ontology/Contribution">nfdico:Contribution</a><sup class="sup-c" title="class">c</sup> or <a href="https://www.nfdi4culture.de/ontology/Organisation">nfdico:Organisation</a><sup class="sup-c" title="class">c</sup>)
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/Website">nfdico:Website</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="homepageof">
+        <h3>homepage of<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/homepageOf</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="instance">
+        <h3>instance<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/instance</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The property is a relationship between an RDM Tool to its running instance.
+                </td>
+            </tr>
+            <tr>
+                <th>Inverse properties</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/instanceOf">nfdico:instanceOf</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/RDMTool">nfdico:RDMTool</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/InstanceOfRDMTool">nfdico:InstanceOfRDMTool</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="instanceof">
+        <h3>instance of<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/instanceOf</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="license1">
+        <h3>license<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/license</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The property is a relationship between a contribution and a license file.
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://purl.org/dc/terms/license">dcterms:license</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Inverse properties</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/licenseOf">nfdico:licenseOf</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    (<a href="https://www.nfdi4culture.de/ontology/BestPractice">nfdico:BestPractice</a><sup class="sup-c" title="class">c</sup> or <a href="https://www.nfdi4culture.de/ontology/Contribution">nfdico:Contribution</a><sup class="sup-c" title="class">c</sup>)
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/License">nfdico:License</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="licenseof">
+        <h3>license of<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/licenseOf</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="location">
+        <h3>location<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/location</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The property is a relationship between a thing and a place its located at.
+                </td>
+            </tr>
+            <tr>
+                <th>Inverse properties</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/locationOf">nfdico:locationOf</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#Thing">owl:Thing</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/Place">nfdico:Place</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="locationof">
+        <h3>location of<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/locationOf</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="mapping">
+        <h3>mapping<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/mapping</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The property is a relationship between a a data ressource and its various representations, e.g. same ressource that exists in different data formats.
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.data-knowledge.org/dk/mapsTo">dk:mapsTo</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Inverse properties</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/mappingOf">nfdico:mappingOf</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    (<a href="https://www.nfdi4culture.de/ontology/CollectionOrDataset">nfdico:CollectionOrDataset</a><sup class="sup-c" title="class">c</sup> or <a href="https://www.nfdi4culture.de/ontology/DataPortal">nfdico:DataPortal</a><sup class="sup-c" title="class">c</sup>)
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/Mapping">nfdico:Mapping</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="mappingof">
+        <h3>mapping of<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/mappingOf</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="mediatype">
+        <h3>media type<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/mediaType</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The property relates a contribution to its media type.
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://purl.org/dc/terms/format">dcterms:format</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Inverse properties</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/mediaTypeOf">nfdico:mediaTypeOf</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    (<a href="https://www.nfdi4culture.de/ontology/CollectionOrDataset">nfdico:CollectionOrDataset</a><sup class="sup-c" title="class">c</sup> or <a href="https://www.nfdi4culture.de/ontology/DataPortal">nfdico:DataPortal</a><sup class="sup-c" title="class">c</sup> or <a href="https://www.nfdi4culture.de/ontology/RDMInfrastructure">nfdico:RDMInfrastructure</a><sup class="sup-c" title="class">c</sup>)
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/MediaType">nfdico:MediaType</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="mediatypeof">
+        <h3>media type of<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/mediaTypeOf</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="norm">
+        <h3>norm<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/norm</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The property is a relationship between a ressource and the international standard or norm.
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://purl.org/dc/terms/conformsTo">dcterms:conformsTo</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Inverse properties</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/normOf">nfdico:normOf</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    (<a href="https://www.nfdi4culture.de/ontology/BestPractice">nfdico:BestPractice</a><sup class="sup-c" title="class">c</sup> or <a href="https://www.nfdi4culture.de/ontology/DevelopmentWork">nfdico:DevelopmentWork</a><sup class="sup-c" title="class">c</sup> or <a href="https://www.nfdi4culture.de/ontology/RDMInfrastructure">nfdico:RDMInfrastructure</a><sup class="sup-c" title="class">c</sup> or <a href="https://www.nfdi4culture.de/ontology/Service">nfdico:Service</a><sup class="sup-c" title="class">c</sup>)
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/Norm">nfdico:Norm</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="normof">
+        <h3>norm of<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/normOf</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="objecttype">
+        <h3>object type<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/objectType</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The property relates a data collection to the type of object it contains.
+                </td>
+            </tr>
+            <tr>
+                <th>Inverse properties</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/objectTypeOf">nfdico:objectTypeOf</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/CollectionOrDataset">nfdico:CollectionOrDataset</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/ObjectType">nfdico:ObjectType</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="objecttypeof">
+        <h3>object type of<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/objectTypeOf</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="ontologytype">
+        <h3>ontology type<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/ontologyType</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The property relates an ontology to its type.
+                </td>
+            </tr>
+            <tr>
+                <th>Inverse properties</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/ontologyTypeOf">nfdico:ontologyTypeOf</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/Ontology">nfdico:Ontology</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/OntologyType">nfdico:OntologyType</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="ontologytypeof">
+        <h3>ontology type of<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/ontologyTypeOf</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="parentorganisation">
+        <h3>parent organisation<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/parentOrganisation</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The property is a parental relationship between organisations.
+                </td>
+            </tr>
+            <tr>
+                <th>Inverse properties</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/subsidiaryOrganization">nfdico:subsidiaryOrganization</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/Organisation">nfdico:Organisation</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/Organisation">nfdico:Organisation</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="partnerorganisation">
+        <h3>partner organisation<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/partnerOrganisation</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The property is a partner relationship between organisations. The property is symmetric.
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/Organisation">nfdico:Organisation</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/Organisation">nfdico:Organisation</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="programminglanguage">
+        <h3>programming language<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/programmingLanguage</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The property links software to a programming language its written in.
+                </td>
+            </tr>
+            <tr>
+                <th>Inverse properties</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/programmingLanguageOf">nfdico:programmingLanguageOf</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/Software">nfdico:Software</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/ProgrammingLanguage">nfdico:ProgrammingLanguage</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="programminglanguageof">
+        <h3>programming language of<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/programmingLanguageOf</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="provider">
+        <h3>provider<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/provider</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The property is a relationship between a contribution and its provider.
+                </td>
+            </tr>
+            <tr>
+                <th>Inverse properties</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/providerOf">nfdico:providerOf</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/Contribution">nfdico:Contribution</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/Organisation">nfdico:Organisation</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="providerof">
+        <h3>provider of<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/providerOf</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="publisher1">
+        <h3>publisher<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/publisher</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The property is a relationship between a ressource and an organisation responsible for publishing it.
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://purl.org/dc/terms/publisher">dcterms:publisher</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Inverse properties</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/publisherOf">nfdico:publisherOf</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    (<a href="https://www.nfdi4culture.de/ontology/BestPractice">nfdico:BestPractice</a><sup class="sup-c" title="class">c</sup> or <a href="https://www.nfdi4culture.de/ontology/Contribution">nfdico:Contribution</a><sup class="sup-c" title="class">c</sup> or <a href="https://www.nfdi4culture.de/ontology/Norm">nfdico:Norm</a><sup class="sup-c" title="class">c</sup>)
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/Organisation">nfdico:Organisation</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="publisherof">
+        <h3>publisher of<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/publisherOf</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="relatedproject">
+        <h3>related project<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/relatedProject</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The property is a relationship between related projects. The property is symmetric.
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/Project">nfdico:Project</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/Project">nfdico:Project</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="servicetype">
+        <h3>service type<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/serviceType</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The property relates a service to its type.
+                </td>
+            </tr>
+            <tr>
+                <th>Inverse properties</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/serviceTypeOf">nfdico:serviceTypeOf</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/Service">nfdico:Service</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/ServiceType">nfdico:ServiceType</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="servicetypeof">
+        <h3>service type of<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/serviceTypeOf</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="software">
+        <h3>software<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/software</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The property is a relationship between a service and a software it uses.
+                </td>
+            </tr>
+            <tr>
+                <th>Inverse properties</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/sofwareOf">nfdico:sofwareOf</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/Service">nfdico:Service</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/Software">nfdico:Software</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="softwareof">
+        <h3>software of<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/sofwareOf</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="sparqlendpoint">
+        <h3>sparql endpoint<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/sparqlEndpoint</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The property relates a data ressource to its SPARQL Endpoint.
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://rdfs.org/ns/void#sparqlEndpoint">void:sparqlEndpoint</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Inverse properties</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/sparqlEndpointOf">nfdico:sparqlEndpointOf</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    (<a href="https://www.nfdi4culture.de/ontology/CollectionOrDataset">nfdico:CollectionOrDataset</a><sup class="sup-c" title="class">c</sup> or <a href="https://www.nfdi4culture.de/ontology/DataPortal">nfdico:DataPortal</a><sup class="sup-c" title="class">c</sup> or <a href="https://www.nfdi4culture.de/ontology/RDMInfrastructure">nfdico:RDMInfrastructure</a><sup class="sup-c" title="class">c</sup> or <a href="https://www.nfdi4culture.de/ontology/Service">nfdico:Service</a><sup class="sup-c" title="class">c</sup>)
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/SparqlEndpoint">nfdico:SparqlEndpoint</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="sparqlendpointof">
+        <h3>sparql endpoint of<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/sparqlEndpointOf</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="subjectarea">
+        <h3>subject area<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/subjectArea</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The property is a relationship between a contribution and its academic discipline, subject area or domain.
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/ns/dcat#theme">dcat:theme</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Inverse properties</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/subjectAreaOf">nfdico:subjectAreaOf</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    (<a href="https://www.nfdi4culture.de/ontology/DataPortal">nfdico:DataPortal</a><sup class="sup-c" title="class">c</sup> or <a href="https://www.nfdi4culture.de/ontology/Service">nfdico:Service</a><sup class="sup-c" title="class">c</sup> or <a href="https://www.nfdi4culture.de/ontology/Software">nfdico:Software</a><sup class="sup-c" title="class">c</sup>)
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/AcademicDiscipline">nfdico:AcademicDiscipline</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="subjectareaof">
+        <h3>subject area of<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/subjectAreaOf</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="subsidiaryorganisation">
+        <h3>subsidiary organisation<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/subsidiaryOrganization</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="technology">
+        <h3>technology<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/technology</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The property is a relationship between a ressource and a technology it uses.
+                </td>
+            </tr>
+            <tr>
+                <th>Inverse properties</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/technologyOf">nfdico:technologyOf</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    (<a href="https://www.nfdi4culture.de/ontology/BestPractice">nfdico:BestPractice</a><sup class="sup-c" title="class">c</sup> or <a href="https://www.nfdi4culture.de/ontology/DataPortal">nfdico:DataPortal</a><sup class="sup-c" title="class">c</sup> or <a href="https://www.nfdi4culture.de/ontology/RDMInfrastructure">nfdico:RDMInfrastructure</a><sup class="sup-c" title="class">c</sup> or <a href="https://www.nfdi4culture.de/ontology/Software">nfdico:Software</a><sup class="sup-c" title="class">c</sup>)
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/Technology">nfdico:Technology</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="technologyof">
+        <h3>technology of<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/technologyOf</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="vocabulary1">
+        <h3>vocabulary<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/vocabulary</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The property is a relationship between a ressource and a vocabulary it uses.
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://rdfs.org/ns/void#vocabulary">void:vocabulary</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Inverse properties</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/vocabularyOf">nfdico:vocabularyOf</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    (<a href="https://www.nfdi4culture.de/ontology/BestPractice">nfdico:BestPractice</a><sup class="sup-c" title="class">c</sup> or <a href="https://www.nfdi4culture.de/ontology/DataPortal">nfdico:DataPortal</a><sup class="sup-c" title="class">c</sup> or <a href="https://www.nfdi4culture.de/ontology/DevelopmentWork">nfdico:DevelopmentWork</a><sup class="sup-c" title="class">c</sup> or <a href="https://www.nfdi4culture.de/ontology/RDMInfrastructure">nfdico:RDMInfrastructure</a><sup class="sup-c" title="class">c</sup> or <a href="https://www.nfdi4culture.de/ontology/Service">nfdico:Service</a><sup class="sup-c" title="class">c</sup> or <a href="https://www.nfdi4culture.de/ontology/Software">nfdico:Software</a><sup class="sup-c" title="class">c</sup>)
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/Ontology">nfdico:Ontology</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="vocabularyof">
+        <h3>vocabulary of<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/vocabularyOf</code></td>
+            </tr>
+        </table>
+    </div>
+</section>
+
+<section id="datatypeproperties">
+    <h2>Datatype Properties <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <ul class="hlist">
+        <li><a href="#areaCode">areaCode</a></li>
+        <li><a href="#emailAddress">emailAddress</a></li>
+    </ul>
+    <div class="entity property" id="areaCode">
+        <h3>areaCode<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/areaCode</code></td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/Organisation">nfdico:Organisation</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="emailAddress">
+        <h3>emailAddress<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/emailAddress</code></td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="https://www.nfdi4culture.de/ontology/Organisation">nfdico:Organisation</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+</section>
+
+<section id="annotationproperties">
+    <h2>Annotation Properties <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <ul class="hlist">
+        <li><a href="#acronym">acronym</a></li>
+        <li><a href="#example">example</a></li>
+    </ul>
+    <div class="entity property" id="acronym">
+        <h3>acronym<sup title="annotation property" class="sup-ap">ap</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/acronym</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="example">
+        <h3>example<sup title="annotation property" class="sup-ap">ap</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://www.nfdi4culture.de/ontology/example</code></td>
+            </tr>
+        </table>
+    </div>
+</section>
+
+  
+  <section id="namedindividuals">
+    <h2>Named Individuals <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <ul class="hlist">
+    </ul>
+</section>
+  
+  <section id="namespaces">
+    <h2>Namespaces <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <dl>
+        <dt>bibo</dt>
+        <dd><code>http://purl.org/ontology/bibo/</code></dd>
+        <dt>dbo</dt>
+        <dd><code>https://dbpedia.org/ontology/</code></dd>
+        <dt>dcat</dt>
+        <dd><code>http://www.w3.org/ns/dcat#</code></dd>
+        <dt>dcmitype</dt>
+        <dd><code>http://purl.org/dc/dcmitype/</code></dd>
+        <dt>dcterms</dt>
+        <dd><code>http://purl.org/dc/terms/</code></dd>
+        <dt>dk</dt>
+        <dd><code>http://www.data-knowledge.org/dk/</code></dd>
+        <dt>doap</dt>
+        <dd><code>http://usefulinc.com/ns/doap#</code></dd>
+        <dt>fabio</dt>
+        <dd><code>http://purl.org/spar/fabio/</code></dd>
+        <dt>frapo</dt>
+        <dd><code>http://purl.org/cerif/frapo/</code></dd>
+        <dt>modsci</dt>
+        <dd><code>https://w3id.org/skgo/modsci#</code></dd>
+        <dt>nfdico</dt>
+        <dd><code>https://www.nfdi4culture.de/ontology/</code></dd>
+        <dt>obo</dt>
+        <dd><code>http://purl.obolibrary.org/obo/</code></dd>
+        <dt>omv</dt>
+        <dd><code>http://omv.ontoware.org/2005/05/ontology#</code></dd>
+        <dt>org</dt>
+        <dd><code>http://www.w3.org/ns/org#</code></dd>
+        <dt>owl</dt>
+        <dd><code>http://www.w3.org/2002/07/owl#</code></dd>
+        <dt>prov</dt>
+        <dd><code>http://www.w3.org/ns/prov#</code></dd>
+        <dt>rdf</dt>
+        <dd><code>http://www.w3.org/1999/02/22-rdf-syntax-ns#</code></dd>
+        <dt>rdfs</dt>
+        <dd><code>http://www.w3.org/2000/01/rdf-schema#</code></dd>
+        <dt>schema</dt>
+        <dd><code>http://schema.org</code></dd>
+        <dt>sd</dt>
+        <dd><code>https://w3id.org/okn/o/sd#</code></dd>
+        <dt>sdo</dt>
+        <dd><code>https://schema.org/</code></dd>
+        <dt>skos</dt>
+        <dd><code>http://www.w3.org/2004/02/skos/core#</code></dd>
+        <dt>swo</dt>
+        <dd><code>http://www.ebi.ac.uk/swo/</code></dd>
+        <dt>vcard</dt>
+        <dd><code>http://www.w3.org/2006/vcard/ns#</code></dd>
+        <dt>vivo</dt>
+        <dd><code>http://vivoweb.org/ontology/core#</code></dd>
+        <dt>void</dt>
+        <dd><code>http://rdfs.org/ns/void#</code></dd>
+        <dt>xsd</dt>
+        <dd><code>http://www.w3.org/2001/XMLSchema#</code></dd>
+    </dl>
+</section>
+  <section id="legend">
+      <h2>Legend</h2>
+      <table class="entity">
+          <tr><td><sup class="sup-c" title="Classes">c</sup></td><td>Classes</td></tr>
+          <tr><td><sup class="sup-op" title="Object Properties">op</sup></td><td>Object Properties</td></tr>
+          <tr><td><sup class="sup-fp" title="Functional Properties">fp</sup></td><td>Functional Properties</td></tr>
+          <tr><td><sup class="sup-dp" title="Data Properties">dp</sup></td><td>Data Properties</td></tr>
+          <tr><td><sup class="sup-ap" title="Annotation Properties">dp</sup></td><td>Annotation Properties</td></tr>
+          <tr><td><sup class="sup-p" title="Properties">p</sup></td><td>Properties</td></tr>
+          <tr><td><sup class="sup-ni" title="Named Individuals">ni</sup></td><td>Named Individuals</td></tr>
+      </table>
+  </section>
+</body>
+</html>
