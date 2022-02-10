@@ -1,0 +1,91 @@
+1. Show me all contributions, their homepage and if available sparql endpoint in the academic discipline art history:
+
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX nfdico: <https://www.nfdi4culture.de/ontology/>
+PREFIX nfdires: <https://www.nfdi4culture.de/resource/>
+
+SELECT ?contLabel ?homepage ?sparql
+WHERE {
+  ?contribution nfdico:homepage ?homepage ;
+                nfdico:subjectArea nfdires:art-history ;
+                rdfs:label ?contLabel .
+  OPTIONAl {?contribution nfdico:sparqlEndpoint ?sparl}
+
+}
+
+
+2. Show all contributions provided by art museums. (Organizations --> Wikidata instanceOf art museum)
+
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX nfdico: <https://www.nfdi4culture.de/ontology/>
+PREFIX nfdires: <https://www.nfdi4culture.de/resource/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+SELECT ?contlabel ?organisation ?orgalabel ?wdorg
+WHERE {
+  ?contribution nfdico:contributor ?organisation ;
+                rdfs:label ?contlabel .
+  ?organisation rdfs:label ?orgalabel .
+  ?gndorg owl:sameAs ?organisation
+    FILTER(REGEX(str(?gndorg), "http://d-nb.info/gnd/"))
+    BIND(replace(str(?gndorg),"http://d-nb.info/gnd/", "") as ?gndorgs)
+          SERVICE <https://query.wikidata.org/sparql> {
+        ?wdorg wdt:P227 ?gndorgs ;
+               wdt:P31 wd:Q207694 .              }
+}
+
+3. Show me all contributions, their types and contributor that provided data in the domain of musicology or similar, and that are situated in the federal state Nordrhein Westaphalia. 
+
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX nfdico: <https://www.nfdi4culture.de/ontology/>
+PREFIX nfdires: <https://www.nfdi4culture.de/resource/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+
+SELECT DISTINCT ?contlabel ?contrtypelabel ?orgalabel
+
+WHERE 
+{
+  ?contribution ?provider ?organisation ;
+                rdfs:label ?contlabel ;
+                rdf:type ?type ;
+                nfdico:subjectArea ?area .
+                FILTER (?area IN (nfdires:music, nfdires:musicology, nfdires:ethnomusicology)) 
+  				FILTER (?provider IN (nfdico:provider, nfdico:contributor)) 
+  
+  ?organisation rdfs:label ?orgalabel .
+  ?type rdfs:label ?contrtypelabel .
+  ?organisation nfdico:location ?city .
+  ?city nfdico:federalState nfdires:state-nordrhein-westfalen .
+  
+}
+
+
+4. How many contributions for each domain are at the moment in the KG?
+
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX nfdico: <https://www.nfdi4culture.de/ontology/>
+
+SELECT ?acadDisc (COUNT(?acadDisc) as ?frequency)
+WHERE {
+?contribution nfdico:subjectArea ?acadDisc .
+?acadDisc rdfs:label ?acadDiscL
+}
+GROUP BY ?acadDisc
+ORDER BY DESC (?frequency)
+
+5. What kind of different contributions and how many of them are at the moment in the KG?
+
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX nfdico: <https://www.nfdi4culture.de/ontology/>
+PREFIX schema: <http://schema.org/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT ?contType (COUNT(?contType) as ?frequency)
+WHERE {
+?contribution rdf:type ?contType .
+  ?contType rdfs:subClassOf nfdico:Contribution .
+  
+}
+GROUP BY ?contType
+ORDER BY DESC (?frequency)
