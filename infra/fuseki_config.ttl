@@ -12,7 +12,7 @@ PREFIX ja:      <http://jena.hpl.hp.com/2005/11/Assembler#>
    ) .
 
 :service rdf:type fuseki:Service ;
-    fuseki:name "nfdico" ;
+    fuseki:name "fuseki" ;
     fuseki:endpoint [
         fuseki:operation fuseki:query ;
         fuseki:name "sparql" ;
