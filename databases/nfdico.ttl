@@ -21,7 +21,7 @@
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 @prefix modsci: <https://w3id.org/skgo/modsci#> .
 @prefix nfdico: <https://www.nfdi4culture.de/ontology/> .
-@prefix schema: <http://schema.org> .
+@prefix schema: <https://schema.org> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix dcmitype: <http://purl.org/dc/dcmitype/> .
 @base <https://www.nfdi4culture.de/ontology/> .
@@ -76,10 +76,6 @@ void:sparqlEndpoint rdf:type owl:ObjectProperty .
 void:vocabulary rdf:type owl:ObjectProperty .
 
 
-###  http://schema.org/funder
-<http://schema.org/funder> rdf:type owl:ObjectProperty .
-
-
 ###  http://www.data-knowledge.org/dk/mapsTo
 dk:mapsTo rdf:type owl:ObjectProperty .
 
@@ -120,6 +116,10 @@ org:subOrganisationOf rdf:type owl:ObjectProperty ;
 dbo:country rdf:type owl:ObjectProperty .
 
 
+###  https://schema.org/funder
+<https://schema.org/funder> rdf:type owl:ObjectProperty .
+
+
 ###  https://www.nfdi4culture.de/ontology/authorityControl
 nfdico:authorityControl rdf:type owl:ObjectProperty ;
                         owl:inverseOf nfdico:authorityOf ;
@@ -139,7 +139,7 @@ nfdico:authorityType rdf:type owl:ObjectProperty ;
                      owl:inverseOf nfdico:authorityTypeOf ;
                      rdfs:domain nfdico:Authority ;
                      rdfs:range nfdico:AuthorityType ;
-                     rdfs:comment "The property is a relationship between an authorty ressource and its type."@en ;
+                     rdfs:comment "The property is a relationship between an authorty resource and its type."@en ;
                      rdfs:label "authority type"@en .
 
 
@@ -241,12 +241,12 @@ nfdico:federalStateOf rdf:type owl:ObjectProperty ;
 
 ###  https://www.nfdi4culture.de/ontology/funder
 nfdico:funder rdf:type owl:ObjectProperty ;
-              rdfs:subPropertyOf <http://schema.org/funder> ,
-                                 <http://xmlns.com/foaf/0.1/fundedBy> ;
+              rdfs:subPropertyOf <http://xmlns.com/foaf/0.1/fundedBy> ,
+                                 <https://schema.org/funder> ;
               owl:inverseOf nfdico:funderOf ;
               rdfs:domain owl:Thing ;
               rdfs:range [ rdf:type owl:Class ;
-                           owl:unionOf ( nfdico:Organisation
+                           owl:unionOf ( nfdico:Organization
                                          nfdico:Project
                                        )
                          ] ;
@@ -302,11 +302,11 @@ nfdico:homepage rdf:type owl:ObjectProperty ;
                 owl:inverseOf nfdico:homepageOf ;
                 rdfs:domain [ rdf:type owl:Class ;
                               owl:unionOf ( nfdico:Contribution
-                                            nfdico:Organisation
+                                            nfdico:Organization
                                           )
                             ] ;
                 rdfs:range nfdico:Website ;
-                rdfs:comment "The property is a relationship between a data ressource and its homepage."@en ;
+                rdfs:comment "The property is a relationship between a data resource and its homepage."@en ;
                 rdfs:label "homepage"@en .
 
 
@@ -372,7 +372,7 @@ nfdico:mapping rdf:type owl:ObjectProperty ;
                                          )
                            ] ;
                rdfs:range nfdico:Mapping ;
-               rdfs:comment "The property is a relationship between a a data ressource and its various representations, e.g. same ressource that exists in different data formats."@en ;
+               rdfs:comment "The property is a relationship between a a data resource and its various representations, e.g. same resource that exists in different data formats."@en ;
                rdfs:label "mapping"@en .
 
 
@@ -413,7 +413,7 @@ nfdico:norm rdf:type owl:ObjectProperty ;
                                       )
                         ] ;
             rdfs:range nfdico:Norm ;
-            rdfs:comment "The property is a relationship between a ressource and the international standard or norm."@en ;
+            rdfs:comment "The property is a relationship between a resource and the international standard or norm."@en ;
             rdfs:label "norm"@en .
 
 
@@ -453,8 +453,8 @@ nfdico:ontologyTypeOf rdf:type owl:ObjectProperty ;
 ###  https://www.nfdi4culture.de/ontology/parentOrganisation
 nfdico:parentOrganisation rdf:type owl:ObjectProperty ;
                           owl:inverseOf nfdico:subsidiaryOrganization ;
-                          rdfs:domain nfdico:Organisation ;
-                          rdfs:range nfdico:Organisation ;
+                          rdfs:domain nfdico:Organization ;
+                          rdfs:range nfdico:Organization ;
                           rdfs:comment "The property is a parental relationship between organisations."@en ;
                           rdfs:label "parent organisation"@en .
 
@@ -462,8 +462,8 @@ nfdico:parentOrganisation rdf:type owl:ObjectProperty ;
 ###  https://www.nfdi4culture.de/ontology/partnerOrganisation
 nfdico:partnerOrganisation rdf:type owl:ObjectProperty ,
                                     owl:SymmetricProperty ;
-                           rdfs:domain nfdico:Organisation ;
-                           rdfs:range nfdico:Organisation ;
+                           rdfs:domain nfdico:Organization ;
+                           rdfs:range nfdico:Organization ;
                            rdfs:comment "The property is a partner relationship between organisations. The property is symmetric."@en ;
                            rdfs:label "partner organisation"@en .
 
@@ -486,7 +486,7 @@ nfdico:programmingLanguageOf rdf:type owl:ObjectProperty ;
 nfdico:provider rdf:type owl:ObjectProperty ;
                 owl:inverseOf nfdico:providerOf ;
                 rdfs:domain nfdico:Contribution ;
-                rdfs:range nfdico:Organisation ;
+                rdfs:range nfdico:Organization ;
                 rdfs:comment "The property is a relationship between a contribution and its provider."@en ;
                 rdfs:label "provider"@en .
 
@@ -506,8 +506,8 @@ nfdico:publisher rdf:type owl:ObjectProperty ;
                                              nfdico:Norm
                                            )
                              ] ;
-                 rdfs:range nfdico:Organisation ;
-                 rdfs:comment "The property is a relationship between a ressource and an organisation responsible for publishing it."@en ;
+                 rdfs:range nfdico:Organization ;
+                 rdfs:comment "The property is a relationship between a resource and an organisation responsible for publishing it."@en ;
                  rdfs:label "publisher"@en .
 
 
@@ -565,7 +565,7 @@ nfdico:sparqlEndpoint rdf:type owl:ObjectProperty ;
                                                 )
                                   ] ;
                       rdfs:range nfdico:SparqlEndpoint ;
-                      rdfs:comment "The property relates a data ressource to its SPARQL Endpoint."@en ;
+                      rdfs:comment "The property relates a data resource to its SPARQL Endpoint."@en ;
                       rdfs:label "sparql endpoint"@en .
 
 
@@ -610,7 +610,7 @@ nfdico:technology rdf:type owl:ObjectProperty ;
                                             )
                               ] ;
                   rdfs:range nfdico:Technology ;
-                  rdfs:comment "The property is a relationship between a ressource and a technology it uses."@en ;
+                  rdfs:comment "The property is a relationship between a resource and a technology it uses."@en ;
                   rdfs:label "technology"@en .
 
 
@@ -633,7 +633,7 @@ nfdico:vocabulary rdf:type owl:ObjectProperty ;
                                             )
                               ] ;
                   rdfs:range nfdico:Ontology ;
-                  rdfs:comment "The property is a relationship between a ressource and a vocabulary it uses."@en ;
+                  rdfs:comment "The property is a relationship between a resource and a vocabulary it uses."@en ;
                   rdfs:label "vocabulary"@en .
 
 
@@ -648,13 +648,13 @@ nfdico:vocabularyOf rdf:type owl:ObjectProperty ;
 
 ###  https://www.nfdi4culture.de/ontology/areaCode
 nfdico:areaCode rdf:type owl:DatatypeProperty ;
-                rdfs:domain nfdico:Organisation ;
+                rdfs:domain nfdico:Organization ;
                 rdfs:range rdfs:Literal .
 
 
 ###  https://www.nfdi4culture.de/ontology/emailAddress
 nfdico:emailAddress rdf:type owl:DatatypeProperty ;
-                    rdfs:domain nfdico:Organisation ;
+                    rdfs:domain nfdico:Organization ;
                     rdfs:range rdfs:Literal .
 
 
@@ -679,7 +679,7 @@ omv:OntologyType rdf:type owl:Class ;
 
 ###  http://omv.ontoware.org/2005/05/ontology#Organisation
 omv:Organisation rdf:type owl:Class ;
-                 owl:equivalentClass nfdico:Organisation .
+                 owl:equivalentClass nfdico:Organization .
 
 
 ###  http://purl.obolibrary.org/obo/ERO_0000005
@@ -702,7 +702,7 @@ obo:IAO_0000025 rdf:type owl:Class ;
 
 ###  http://purl.obolibrary.org/obo/OBI_0000245
 obo:OBI_0000245 rdf:type owl:Class ;
-                owl:equivalentClass nfdico:Organisation .
+                owl:equivalentClass nfdico:Organization .
 
 
 ###  http://purl.org/cerif/frapo/FundingAgency
@@ -723,8 +723,8 @@ dcmitype:Collection rdf:type owl:Class ;
 dcmitype:Service rdf:type owl:Class .
 
 
-###  http://purl.org/dc/terms/BibliographicRessource
-dcterms:BibliographicRessource rdf:type owl:Class .
+###  http://purl.org/dc/terms/BibliographicResource
+dcterms:BibliographicResource rdf:type owl:Class .
 
 
 ###  http://purl.org/dc/terms/LicenseDocument
@@ -768,19 +768,6 @@ fabio:Ontology rdf:type owl:Class ;
 fabio:ScholarlyWork rdf:type owl:Class .
 
 
-###  http://schema.org/ComputerLanguage
-<http://schema.org/ComputerLanguage> rdf:type owl:Class .
-
-
-###  http://schema.org/Organisation
-<http://schema.org/Organisation> rdf:type owl:Class ;
-                                 owl:equivalentClass nfdico:Organisation .
-
-
-###  http://schema.org/Project
-<http://schema.org/Project> rdf:type owl:Class .
-
-
 ###  http://usefulinc.com/ns/doap#Project
 doap:Project rdf:type owl:Class .
 
@@ -818,7 +805,7 @@ vcard:Location rdf:type owl:Class .
 
 ###  http://www.w3.org/2006/vcard/ns#Organisation
 vcard:Organisation rdf:type owl:Class ;
-                   owl:equivalentClass nfdico:Organisation .
+                   owl:equivalentClass nfdico:Organization .
 
 
 ###  http://www.w3.org/ns/dcat#DataService
@@ -832,7 +819,7 @@ dcat:Dataset rdf:type owl:Class ;
 
 ###  http://www.w3.org/ns/org#Organisation
 org:Organisation rdf:type owl:Class ;
-                 owl:equivalentClass nfdico:Organisation .
+                 owl:equivalentClass nfdico:Organization .
 
 
 ###  http://www.w3.org/ns/sparql-service-description#Software
@@ -844,9 +831,9 @@ org:Organisation rdf:type owl:Class ;
 <http://xmlns.com/foaf/0.1/Document> rdf:type owl:Class .
 
 
-###  http://xmlns.com/foaf/0.1/Organisation
-<http://xmlns.com/foaf/0.1/Organisation> rdf:type owl:Class ;
-                                         owl:equivalentClass nfdico:Organisation .
+###  http://xmlns.com/foaf/0.1/Organization
+<http://xmlns.com/foaf/0.1/Organization> rdf:type owl:Class ;
+                                         owl:equivalentClass nfdico:Organization .
 
 
 ###  http://xmlns.com/foaf/0.1/Person
@@ -867,6 +854,32 @@ dbo:Person rdf:type owl:Class ;
            owl:equivalentClass nfdico:Person .
 
 
+###  https://schema.org/ComputerLanguage
+<https://schema.org/ComputerLanguage> rdf:type owl:Class .
+
+
+###  https://schema.org/DataCatalog
+<https://schema.org/DataCatalog> rdf:type owl:Class ;
+                                 owl:equivalentClass nfdico:CollectionOrDataset .
+
+
+###  https://schema.org/Organization
+<https://schema.org/Organization> rdf:type owl:Class ;
+                                  owl:equivalentClass nfdico:Organization .
+
+
+###  https://schema.org/Product
+<https://schema.org/Product> rdf:type owl:Class .
+
+
+###  https://schema.org/Project
+<https://schema.org/Project> rdf:type owl:Class .
+
+
+###  https://schema.org/Service
+<https://schema.org/Service> rdf:type owl:Class .
+
+
 ###  https://w3id.org/skgo/modsci#ProgrammingLanguage
 modsci:ProgrammingLanguage rdf:type owl:Class ;
                            owl:equivalentClass nfdico:ProgrammingLanguage .
@@ -881,7 +894,7 @@ nfdico:AcademicDiscipline rdf:type owl:Class ;
                           rdfs:subClassOf fabio:AcademicSubject ,
                                           dbo:AcademicSubject ,
                                           modsci:Science ;
-                          rdfs:comment "An academic discipline, a research field or domain of a ressource, e.g. a data portal."@en ;
+                          rdfs:comment "An academic discipline, a research field or domain of a resource, e.g. a data portal."@en ;
                           rdfs:label "academic discipline"@en ;
                           nfdico:example "Theater, Computer Graphics, Art" .
 
@@ -902,7 +915,7 @@ nfdico:AuthorityType rdf:type owl:Class ;
 
 ###  https://www.nfdi4culture.de/ontology/BestPractice
 nfdico:BestPractice rdf:type owl:Class ;
-                    rdfs:comment "A ressource that identifies a standard or preferred procedure within specific domain."@en ;
+                    rdfs:comment "A resource that identifies a standard or preferred procedure within specific domain."@en ;
                     rdfs:label "best practice"@en ;
                     nfdico:example "Persistente URL, DMB-Standards" .
 
@@ -925,13 +938,14 @@ nfdico:CollectionOrDataset rdf:type owl:Class ;
 
 ###  https://www.nfdi4culture.de/ontology/Contribution
 nfdico:Contribution rdf:type owl:Class ;
+                    rdfs:subClassOf <https://schema.org/Product> ;
                     rdfs:comment "A contribution to a project made by a contributor. Subclasses are used to specify particular contributions, e.g. DataPortal or Software."@en ;
                     rdfs:label "contribution"@en .
 
 
 ###  https://www.nfdi4culture.de/ontology/Contributor
 nfdico:Contributor rdf:type owl:Class ;
-                   rdfs:subClassOf nfdico:Organisation ;
+                   rdfs:subClassOf nfdico:Organization ;
                    rdfs:comment "An organisation that contributes to the creation of data."@en ;
                    rdfs:label "contributor"@en ;
                    nfdico:example "Deutsche Nationalbibliotek Frankfurt am Main, Dehio Vereinigung Wiesbaden" .
@@ -956,7 +970,7 @@ nfdico:DataPortal rdf:type owl:Class ;
 ###  https://www.nfdi4culture.de/ontology/DevelopmentWork
 nfdico:DevelopmentWork rdf:type owl:Class ;
                        rdfs:subClassOf nfdico:Contribution ;
-                       rdfs:comment "A ressource that identifies an ongoing development of standards, services, data models, vocabularies, ontologies, etc."@en ;
+                       rdfs:comment "A resource that identifies an ongoing development of standards, services, data models, vocabularies, ontologies, etc."@en ;
                        rdfs:label "development work"@en ;
                        nfdico:example "Development of a controlled vocabulary for audivisual material in publication and research data; Extension of the AAT vocabulary for the history of architecture" .
 
@@ -971,15 +985,15 @@ nfdico:FederalState rdf:type owl:Class ;
 
 ###  https://www.nfdi4culture.de/ontology/FundingOrganisation
 nfdico:FundingOrganisation rdf:type owl:Class ;
-                           rdfs:subClassOf nfdico:Organisation ;
-                           rdfs:comment "An organisation that provides funding for projects or ressources."@en ;
+                           rdfs:subClassOf nfdico:Organization ;
+                           rdfs:comment "An organisation that provides funding for projects or resources."@en ;
                            rdfs:label "funding organisation"@en ;
                            nfdico:example "Deutsche Forschungsmanschaft" .
 
 
 ###  https://www.nfdi4culture.de/ontology/InstanceOfRDMTool
 nfdico:InstanceOfRDMTool rdf:type owl:Class ;
-                         rdfs:comment "A ressource that identifies a single copy of an RDM Tool running on a single physical or virtual server."@en ;
+                         rdfs:comment "A resource that identifies a single copy of an RDM Tool running on a single physical or virtual server."@en ;
                          rdfs:label "instance of research data management tool"@en ;
                          nfdico:example "Research Data Management Organiser, EPrints" .
 
@@ -989,14 +1003,14 @@ nfdico:License rdf:type owl:Class ;
                rdfs:subClassOf dcterms:LicenseDocument ,
                                vivo:Licence ,
                                swo:SWO_0000002 ;
-               rdfs:comment "A document that provides legal guidelines for the use of a ressource, e.g. a software."@en ;
+               rdfs:comment "A document that provides legal guidelines for the use of a resource, e.g. a software."@en ;
                rdfs:label "license"@en ;
                nfdico:example "cc-by-3, Digital Peer Publishing Lizenz" .
 
 
 ###  https://www.nfdi4culture.de/ontology/Mapping
 nfdico:Mapping rdf:type owl:Class ;
-               rdfs:comment "A ressource that documents a mapping from a format/vocabulary to other format/vocabulary."@en ;
+               rdfs:comment "A resource that documents a mapping from a format/vocabulary to other format/vocabulary."@en ;
                rdfs:label "mapping"@en ;
                nfdico:example "Bach Digital Mapping, weGa guidelines" .
 
@@ -1017,27 +1031,27 @@ nfdico:Norm rdf:type owl:Class ;
 
 ###  https://www.nfdi4culture.de/ontology/ObjectType
 nfdico:ObjectType rdf:type owl:Class ;
-                  rdfs:comment "A ressource identifies the type of object in a data collection."@en ;
+                  rdfs:comment "A resource identifies the type of object in a data collection."@en ;
                   rdfs:label "object type"@en ;
                   nfdico:example "Book, photograph, music sheet" .
 
 
 ###  https://www.nfdi4culture.de/ontology/Ontology
 nfdico:Ontology rdf:type owl:Class ;
-                rdfs:comment "An ontology used for formal representations of concepts in a ressource, e.g. in data collection."@en ;
+                rdfs:comment "An ontology used for formal representations of concepts in a resource, e.g. in data collection."@en ;
                 rdfs:label "ontology"@en ;
                 nfdico:example "lido, gndo, dbo, dublin-core" .
 
 
 ###  https://www.nfdi4culture.de/ontology/OntologyType
 nfdico:OntologyType rdf:type owl:Class ;
-                    rdfs:comment "A ressource identifies the type of an ontology."@en ;
+                    rdfs:comment "A resource identifies the type of an ontology."@en ;
                     rdfs:label "ontology type"@en ;
                     nfdico:example "encoding/vocabulary, ontology, controlled vocabulary" .
 
 
-###  https://www.nfdi4culture.de/ontology/Organisation
-nfdico:Organisation rdf:type owl:Class ;
+###  https://www.nfdi4culture.de/ontology/Organization
+nfdico:Organization rdf:type owl:Class ;
                     rdfs:comment "An organisation of some kind, e.g. research organisation or business organisation."@en ;
                     rdfs:label "organisation"@en ;
                     nfdico:example "Universitätsbibliothek Leipzig, Sächsisches Wirtschaftsarchiv, Museen der Stadt Köln" .
@@ -1045,7 +1059,7 @@ nfdico:Organisation rdf:type owl:Class ;
 
 ###  https://www.nfdi4culture.de/ontology/Person
 nfdico:Person rdf:type owl:Class ;
-              rdfs:comment "A ressource that represents a single person."@en ;
+              rdfs:comment "A resource that represents a single person."@en ;
               rdfs:label "person"@en ;
               nfdico:example "Christoph Hölzel, Franziska Voß, Tabea Tietz" .
 
@@ -1063,7 +1077,7 @@ nfdico:Place rdf:type owl:Class ;
 
 ###  https://www.nfdi4culture.de/ontology/ProgrammingLanguage
 nfdico:ProgrammingLanguage rdf:type owl:Class ;
-                           rdfs:subClassOf <http://schema.org/ComputerLanguage> ;
+                           rdfs:subClassOf <https://schema.org/ComputerLanguage> ;
                            rdfs:comment "A formal language used for implementing a software."@en ;
                            rdfs:label "programming language"@en ;
                            nfdico:example "java, ruby,  C++, perl" .
@@ -1071,9 +1085,9 @@ nfdico:ProgrammingLanguage rdf:type owl:Class ;
 
 ###  https://www.nfdi4culture.de/ontology/Project
 nfdico:Project rdf:type owl:Class ;
-               rdfs:subClassOf <http://schema.org/Project> ,
-                               doap:Project ,
-                               <http://xmlns.com/foaf/0.1/Project> ;
+               rdfs:subClassOf doap:Project ,
+                               <http://xmlns.com/foaf/0.1/Project> ,
+                               <https://schema.org/Project> ;
                rdfs:comment "A scientific or business endeavor that aims to conclude an investigation or to answer a research question."@en ;
                rdfs:label "project"@en ;
                nfdico:example "Fachinformationsdienst Für Medien- und Kommunikationswissenschaft" .
@@ -1081,9 +1095,9 @@ nfdico:Project rdf:type owl:Class ;
 
 ###  https://www.nfdi4culture.de/ontology/Publication
 nfdico:Publication rdf:type owl:Class ;
-                   rdfs:subClassOf dcterms:BibliographicRessource ,
+                   rdfs:subClassOf dcterms:BibliographicResource ,
                                    fabio:ScholarlyWork ;
-                   rdfs:comment "A published scholarly work that reports on ongoing activity about or within a ressource, e.g. a dataset."@en ;
+                   rdfs:comment "A published scholarly work that reports on ongoing activity about or within a resource, e.g. a dataset."@en ;
                    rdfs:label "publication"@en ;
                    nfdico:example "\"MusiXplora: Visual analysis of a musicological encyclopedia\", \"Textkategorien in kompositorischen Werkstattdokumenten\"" .
 
@@ -1118,6 +1132,7 @@ nfdico:Service rdf:type owl:Class ;
                rdfs:subClassOf obo:ERO_0000005 ,
                                frapo:Service ,
                                dcmitype:Service ,
+                               <https://schema.org/Service> ,
                                nfdico:Contribution ;
                rdfs:comment "A service, expertise or skill provided by an organisation."@en ;
                rdfs:label "service"@en ;
@@ -1126,7 +1141,7 @@ nfdico:Service rdf:type owl:Class ;
 
 ###  https://www.nfdi4culture.de/ontology/ServiceType
 nfdico:ServiceType rdf:type owl:Class ;
-                   rdfs:comment "A ressource identifies the tape of a service."@en ;
+                   rdfs:comment "A resource identifies the tape of a service."@en ;
                    rdfs:label "service type"@en ;
                    nfdico:example "Expertise, advertisement, curation" .
 
@@ -1148,7 +1163,7 @@ nfdico:SparqlEndpoint rdf:type owl:Class ;
 
 ###  https://www.nfdi4culture.de/ontology/Technology
 nfdico:Technology rdf:type owl:Class ;
-                  rdfs:comment "A technology, e.g. a web application or a programming framework used in a ressource."@en ;
+                  rdfs:comment "A technology, e.g. a web application or a programming framework used in a resource."@en ;
                   rdfs:label "technology"@en ;
                   nfdico:example "Groovy on Grails, Angular" .
 
@@ -1156,7 +1171,7 @@ nfdico:Technology rdf:type owl:Class ;
 ###  https://www.nfdi4culture.de/ontology/Website
 nfdico:Website rdf:type owl:Class ;
                rdfs:subClassOf <http://xmlns.com/foaf/0.1/Document> ;
-               rdfs:comment "A homepage or a website of a ressource."@en ;
+               rdfs:comment "A homepage or a website of a resource."@en ;
                rdfs:label "website"@en ;
                nfdico:example "https://opac.rism.info" .
 
