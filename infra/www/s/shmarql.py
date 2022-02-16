@@ -208,7 +208,11 @@ async def results_clicker(event):
 
 
 async def execute_sparql_clicker(event):
-    results = await sparql(editor.getValue())
+    q = editor.getValue()
+    new_url = "?q=" + encodeURIComponent(q)
+    history.pushState({}, "", new_url)
+
+    results = await sparql(q)
     if "error" in results:
         document.getElementById("query_results").innerHTML = results["error"]
     else:
@@ -241,6 +245,14 @@ async def init():
     navtabs = document.getElementById("navtabs")
     navtabs.addEventListener("click", navtabs_clicker)
     results_element.addEventListener("click", results_clicker)
+
+    params = __new__(URL(document.location)).searchParams
+    for q in params.getAll("q"):
+        editor.setValue(q)
+        e = E()
+        e.target = document.getElementById("tabsprql")
+        navtabs_clicker(e)
+
     if window.location.hash == "#query":
         e = E()
         e.target = document.getElementById("tabsprql")
